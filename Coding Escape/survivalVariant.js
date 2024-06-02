@@ -6,7 +6,7 @@ const h = parseInt(readline);
 const totalHoursNeeded = d * 24;
 
 // Calculate the total number of hours the aplles can provide 
-
+// total number
 const totalHoursFromApples = n* h ;
 
 if (totalHoursFromApples > totalHoursNeeded) {
