@@ -29,3 +29,29 @@ function getMinSteps(currentChar, targetChar) {
 
     return forwardSteps <= backwardSteps ? ['+', forwardSteps] : ['-', backwardSteps];
 }
+
+// We start from zone 0 
+let currentChar = Array(30).fill(' ')
+
+for (let i = 0; i < magicPhrase.length; i++) {
+    let targetChar = magicPhrase[i];
+
+    // Move to the current zone (we use i % 30 to loop around the 30 zones)
+    moveToZone(i % 30);
+
+    // Get the minimum steps to reach the target character
+    let [operation, steps] = getMinSteps(currentChars[currentZone], targetChar);
+
+    // Apply the operations to adjust the rune
+    for (let j = 0; j < steps; j++) {
+        commands.push(operation);
+    }
+
+    // Update the current character in the zone
+    currentChars[currentZone] = targetChar;
+
+    // Trigger the rune to add the character to the output
+    commands.push('.');
+}
+ // outpu commands
+ console.log(commands.join(' '));
