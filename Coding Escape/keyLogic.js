@@ -1,0 +1,9 @@
+var inputs = readline(' ');
+const nbFloors = parseInt(inputs[0]);
+const width = parseInt(inputs[1]);
+const nbRounds = parseInt(inputs[2]);
+const exitFloors = parseInt(inputs[3]);
+const exitPos = parseInt(inputs[4]);
+const nbTotalCones = parseInt(inputs[5]);
+const nbAdditionalElevators = parseInt(inputs[6]);
+const nbElevators = parseInt(inputs[7]);
