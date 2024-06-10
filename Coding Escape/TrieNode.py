@@ -25,7 +25,7 @@ data = input().split()
 N = int(data[0])
 phone_numbers = data[1:N+1]
 
-# Create a trie and insert phone numbers
+# Create a trie and insert phone nummbers
 trie = Trie()
 for number in phone_numbers:
     trie.insert(number)
