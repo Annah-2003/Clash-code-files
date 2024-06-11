@@ -2,7 +2,7 @@ var inputs = readline().split(' ');
 const W = parseInt(inputs[0]); // width of the building.
 const H = parseInt(inputs[1]); // height of the building.
 const N = parseInt(readline()); // maximum number of turns before game over.
-var inputs = readline().split(' ');
+var inputs = readline().split(' '); // split the array
 let x0 = parseInt(inputs[0]);
 let y0 = parseInt(inputs[1]);
 
