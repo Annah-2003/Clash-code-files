@@ -6,7 +6,7 @@ def get_lane(lane_index):
 def can_jump(x, y, s):
     lane = get_lane(y)
     for i in range(1, s+1):
-        if lane[x+i] == '0':
+        if x+i < len(lane) and lane[x+i] == '0':
             return False
     return True
 
@@ -19,12 +19,12 @@ def can_move_down(y):
 def will_fall(x, y, s):
     lane = get_lane(y)
     for i in range(1, s+1):
-        if lane[x+i] == '0':
+        if x+i < len(lane) and lane[x+i] == '0':
             return True
     return False
 
 def safe_to_speed(x, y, s):
-    return not will_fall(x, y, s + 1)
+    return s < 50 and not will_fall(x, y, s + 1)
 
 def safe_to_slow(x, y, s):
     return s > 1 and not will_fall(x, y, s - 1)
@@ -45,11 +45,14 @@ while True:
 
     # Determine the action to take
     action = "WAIT"
+    danger_detected = False
+
     for bike in bikes:
         x, y, a = bike
         
         # Check if we need to jump
         if will_fall(x, y, s):
+            danger_detected = True
             if can_jump(x, y, s):
                 action = "JUMP"
             elif can_move_up(y) and not will_fall(x, y - 1, s):
@@ -60,11 +63,15 @@ while True:
                 action = "SLOW"
             break
         
+    if not danger_detected:
         # Check if we can safely speed up
-        if safe_to_speed(x, y, s):
-            action = "SPEED"
-        elif safe_to_slow(x, y, s):
-            action = "SLOW"
+        for bike in bikes:
+            x, y, a = bike
+            if safe_to_speed(x, y, s):
+                action = "SPEED"
+                break
+            elif safe_to_slow(x, y, s):
+                action = "SLOW"
 
     # Output the chosen action
     print(action)
