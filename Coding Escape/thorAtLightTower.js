@@ -22,6 +22,6 @@ while (true) {
     if (directionX === 'W') thorX--;
     else if (directionX === 'E') thorX++;
 
-    // OUTPUT THE CHOSEN DIRECTION 
+    // OUTPUT THE CHOSEN DIRECTION
     console.log(directionY + directionX);
 }

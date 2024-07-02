@@ -11,7 +11,7 @@ class Trie:
         def insert(self,number):
             current_node = self.root
             for digit in number:
-                if digit not in current_node.children:
+                if digit not in current_node.chidren:
                     current_node.children[digit] = TrieNode()
                     self.size += 1
                 current_node = current_node.children[digit]
