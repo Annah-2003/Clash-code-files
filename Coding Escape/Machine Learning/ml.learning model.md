@@ -14,4 +14,19 @@ Machine learning has a nature of approximation.
  Any machine learning problem starts from a data set .
 
  # Supervised.
- - The data set is labeled. The data set is used to train the model. The model is
+ - The data set is labeled. The data set is used to train the model. e.g `Regression {Checking temeperature or house prices}` esssential in tasks such as fraud detection, medical diagnosis and face recognition systems.
+
+ # Unsupervised.
+ - The data set is not labeled. The data set is used to train the model.
+ the goal is to find hidden patterns, structures and relationships within the data wihtout explicit supervision or predefined outcomes. Wildly used in market research and recccomendation systems
+
+ # Semi-supervised learning
+ - The data set is partially labeled. The data set is used to train the model.
+
+ Classification(discrete values e.g boolean) vs regression(continous values) used based o the type of output values.
+ Logistic Regression, which gives continuous probability values as output, but it is served to solve the classification problem.
+
+ `Regardless of the machine learning algorithms, one would not be able to learn anything from data that contains too much noise or is too inconsistent with the reality.`
+
+ # Feature Engineering
+ Group of activities that transform data into a desires format.

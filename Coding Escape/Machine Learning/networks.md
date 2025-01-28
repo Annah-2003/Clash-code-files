@@ -1,0 +1,1 @@
+`The nslookup command is a network utility tool used to query and retrieve information from the Domain Name System (DNS). It helps resolve domain names into IP addresses and vice versa. This is particularly useful for troubleshooting DNS-related issues and understanding how domain names map to IP addresses.`
